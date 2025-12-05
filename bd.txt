@@ -1,0 +1,896 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 16-02-2023 a las 06:02:36
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `sistema`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `auditoria`
+--
+
+CREATE TABLE `auditoria` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `fecha_hora` datetime NOT NULL,
+  `movimiento` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `auditoria`
+--
+
+INSERT INTO `auditoria` (`id`, `id_usuario`, `fecha_hora`, `movimiento`) VALUES
+(53, 1, '2023-02-13 13:33:23', 'Nuevo Cliente con CI/RUC 412141 ingresado.'),
+(54, 1, '2023-02-13 13:33:27', 'Cliente con CI/RUC 1878336y ID 2 modificado'),
+(55, 1, '2023-02-13 13:33:30', 'Cliente con ID 2 eliminado'),
+(56, 1, '2023-02-13 13:33:32', 'Cliente con ID 2 reingresado'),
+(57, 1, '2023-02-13 13:35:18', 'Nueva Categoria Final agregada'),
+(58, 1, '2023-02-13 13:35:21', 'Categoria \'Prueba\' con ID 3 modificada'),
+(59, 1, '2023-02-13 13:35:23', 'Categoria con ID 3 eliminada'),
+(60, 1, '2023-02-13 13:35:25', 'Categoria con ID 3 reingresada'),
+(61, 1, '2023-02-13 14:16:37', 'Nuevo Producto: \'175/70/13\' y código: 2, ingresado'),
+(62, 1, '2023-02-13 14:16:44', 'Producto: \'195/65/15\' y código: 1, modificado'),
+(63, 1, '2023-02-13 14:16:50', 'Producto con ID: 2, eliminado'),
+(64, 1, '2023-02-13 14:16:53', 'Producto con ID: 2, reingresado'),
+(65, 1, '2023-02-13 14:19:19', 'Compra Realizada por un total de: 560000 Gs.'),
+(66, 1, '2023-02-13 14:19:36', 'Venta Realizada por un total de: 720000 Gs. al cliente con ID: 1'),
+(67, 1, '2023-02-13 14:23:39', 'Compra con ID: 4, anulada.'),
+(68, 1, '2023-02-13 14:24:24', 'Compra con ID: 5, anulada.'),
+(69, 1, '2023-02-13 14:25:28', 'Venta con ID: 20, anulada.'),
+(70, 1, '2023-02-13 16:05:17', 'Nuevo Producto: \'Prueba\' con código: 123445, ingresado'),
+(71, 1, '2023-02-14 15:58:22', 'Nuevo Producto: \'Prueba\' con código: 3, ingresado'),
+(72, 1, '2023-02-14 16:37:21', 'Nuevo Producto: \'Por Fin\' con código: 4, ingresado'),
+(73, 1, '2023-02-14 16:47:19', 'Nuevo Producto: \'14 de 4 agujeros\' con código: 5, ingresado'),
+(74, 1, '2023-02-14 16:48:27', 'Compra Realizada por un total de: 1460000 Gs.'),
+(75, 1, '2023-02-14 16:52:46', 'Nuevo Producto: \'175/70/14\' con código: 6, ingresado'),
+(76, 1, '2023-02-15 12:51:24', 'Producto con ID: 1, eliminado'),
+(77, 1, '2023-02-15 12:52:08', 'Producto con ID: 1, reingresado'),
+(78, 1, '2023-02-15 12:59:16', 'Producto: \'195/65/15\' y código: 1, modificado'),
+(79, 1, '2023-02-15 12:59:37', 'Producto: \'195/65/15\' y código: 1, modificado'),
+(80, 1, '2023-02-15 12:59:45', 'Producto: \'195/65/15\' y código: 1, modificado'),
+(81, 1, '2023-02-15 16:42:31', 'Producto con ID: 1, eliminado'),
+(82, 1, '2023-02-15 16:54:12', 'Nuevo Proveedor con RUC: \'12331231\', ingresado'),
+(83, 1, '2023-02-15 16:59:36', 'Proveedor con RUC: \'5734335-13\' y ID: \'1\', modificado'),
+(84, 1, '2023-02-15 17:00:08', 'Proveedor con RUC: \'5734335-1\' y ID: \'1\', modificado'),
+(85, 1, '2023-02-15 17:02:12', 'Cliente con ID: 1, eliminado'),
+(86, 1, '2023-02-15 17:02:15', 'Proveedor con ID: \'1\', reingresado'),
+(87, 1, '2023-02-15 17:13:38', 'Producto con ID: 1, reingresado'),
+(88, 1, '2023-02-15 18:11:16', 'Nuevo Producto: \'Prueba Compra\' con código: 123456, ingresado'),
+(89, 1, '2023-02-15 18:11:57', 'Compra Realizada por un total de: 620000 Gs.'),
+(90, 1, '2023-02-15 18:13:36', 'Nueva Categoria: \'Lalo\', agregada'),
+(91, 1, '2023-02-15 18:18:22', 'Compra Realizada por un total de: 560000 Gs.'),
+(92, 1, '2023-02-15 22:52:41', 'Producto: \'195/65/15\' y código: 1, modificado'),
+(93, 1, '2023-02-15 23:02:00', 'Cliente con CI/RUC: 1878336y ID: 2, modificado'),
+(94, 1, '2023-02-16 00:36:30', 'Compra Realizada por un total de: 4200000 Gs.'),
+(95, 1, '2023-02-16 00:37:21', 'Venta Realizada por un total de: 3115000 Gs. al cliente con ID: 1'),
+(96, 1, '2023-02-16 01:31:13', 'Compra Realizada por un total de: 930000 Gs.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cajas`
+--
+
+CREATE TABLE `cajas` (
+  `id` int(11) NOT NULL,
+  `caja` varchar(50) NOT NULL,
+  `estado` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cajas`
+--
+
+INSERT INTO `cajas` (`id`, `caja`, `estado`) VALUES
+(1, 'General', 1),
+(2, 'Secundaria', 1),
+(3, 'Prueba', 1),
+(4, 'Generalessss', 1),
+(5, 'Generalesa', 1),
+(6, 'Prueba2', 1),
+(7, 'Lálo', 1),
+(8, '2da_Caja', 1),
+(9, 'Final', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categorias`
+--
+
+CREATE TABLE `categorias` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `estado` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id`, `nombre`, `estado`) VALUES
+(1, 'Cubiertas', 1),
+(2, 'Llantas Nuevas', 1),
+(3, 'Prueba', 1),
+(4, 'Cámaras', 1),
+(5, 'Prueba2', 1),
+(6, 'sadasda', 1),
+(7, '12', 1),
+(8, '123', 1),
+(9, 'ast', 1),
+(10, 'Aloe', 1),
+(11, 'Auditor', 1),
+(12, 'Movimiento', 1),
+(13, 'Prueba', 1),
+(14, 'Prueba 200', 1),
+(15, 'Cesar Alegresasas', 1),
+(16, 'sdfasfa212', 1),
+(17, 'Prueba 21', 1),
+(18, 'Prueba 88', 1),
+(19, 'cawqdas', 1),
+(20, 'Prueba 12', 1),
+(21, 'Cesar Alegredsasdas', 1),
+(22, 'dsfasfasf', 1),
+(23, 'Lalito', 1),
+(24, 'Cesar Alegre Prueba', 1),
+(25, 'Cesar Alegre Prueba21', 1),
+(26, 'Por favor', 1),
+(27, 'Prueba de usuario 1', 1),
+(28, 'Lalitooo', 1),
+(29, 'Por favor mostra 1', 1),
+(30, 'asdfg', 1),
+(31, 'Probando', 1),
+(32, 'asdfasf', 1),
+(33, 'asdfasfaa', 1),
+(34, 'asdfasfaa2', 1),
+(35, 'alass', 1),
+(36, 'tucu', 1),
+(37, 'Lalitos', 1),
+(38, 'Cata', 1),
+(39, 'Llantas usadas', 1),
+(40, 'Final', 1),
+(41, 'Lalo', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cierre_caja`
+--
+
+CREATE TABLE `cierre_caja` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `monto_inicial` int(11) NOT NULL,
+  `monto_final` int(11) NOT NULL DEFAULT 0,
+  `fecha_apertura` datetime NOT NULL,
+  `fecha_cierre` datetime NOT NULL,
+  `total_ventas` int(11) NOT NULL,
+  `monto_total` int(11) NOT NULL DEFAULT 0,
+  `estado` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cierre_caja`
+--
+
+INSERT INTO `cierre_caja` (`id`, `id_usuario`, `monto_inicial`, `monto_final`, `fecha_apertura`, `fecha_cierre`, `total_ventas`, `monto_total`, `estado`) VALUES
+(91, 1, 1000, 0, '2023-02-10 16:12:06', '2023-02-10 16:16:25', 0, 1000, 0),
+(92, 1, 10000, 0, '2023-02-10 16:17:50', '2023-02-10 16:18:26', 0, 10000, 0),
+(93, 1, 12312, 0, '2023-02-10 16:28:32', '2023-02-10 16:31:37', 0, 12312, 0),
+(94, 1, 10000, 0, '2023-02-10 16:34:30', '2023-02-10 16:34:43', 0, 10000, 0),
+(95, 1, 1231, 0, '2023-02-10 16:35:45', '2023-02-10 16:37:00', 0, 1231, 0),
+(96, 1, 10000, 0, '2023-02-10 16:51:22', '2023-02-10 16:52:01', 0, 10000, 0),
+(97, 1, 10000, 0, '2023-02-10 16:52:39', '2023-02-10 16:52:47', 0, 10000, 0),
+(98, 1, 123, 0, '2023-02-10 16:53:28', '2023-02-10 16:53:44', 0, 123, 0),
+(99, 1, 1000, 0, '2023-02-10 16:54:10', '2023-02-10 16:59:18', 0, 1000, 0),
+(100, 1, 1222, 0, '2023-02-10 17:14:58', '2023-02-10 17:15:21', 0, 1222, 0),
+(101, 1, 1000, 0, '2023-02-10 17:16:31', '2023-02-10 17:43:07', 0, 1000, 0),
+(102, 1, 11, 0, '2023-02-10 17:43:32', '2023-02-10 17:44:24', 0, 11, 0),
+(103, 1, 123123, 0, '2023-02-10 17:46:18', '2023-02-10 17:46:38', 0, 123123, 0),
+(104, 1, 10000, 0, '2023-02-10 17:46:44', '2023-02-10 17:54:13', 0, 10000, 0),
+(105, 1, 12312, 0, '2023-02-10 17:57:41', '2023-02-10 18:01:54', 0, 12312, 0),
+(106, 1, 1231, 0, '2023-02-10 18:03:43', '2023-02-10 18:03:59', 0, 1231, 0),
+(107, 1, 2131, 0, '2023-02-10 18:04:13', '2023-02-10 18:13:40', 0, 2131, 0),
+(108, 1, 1231, 0, '2023-02-10 18:27:15', '2023-02-10 18:30:55', 0, 1231, 0),
+(109, 1, 1231, 0, '2023-02-10 18:40:09', '2023-02-10 18:47:17', 0, 1231, 0),
+(110, 1, 23123, 0, '2023-02-10 18:47:24', '2023-02-10 18:47:28', 0, 23123, 0),
+(111, 1, 123, 0, '2023-02-10 18:51:22', '2023-02-10 18:51:47', 0, 123, 0),
+(112, 1, 12323, 0, '2023-02-10 18:52:44', '2023-02-10 18:52:59', 0, 12323, 0),
+(113, 1, 1231, 0, '2023-02-10 18:53:16', '2023-02-10 19:12:41', 0, 1231, 0),
+(114, 1, 10000, 0, '2023-02-10 19:39:29', '2023-02-10 19:39:32', 0, 10000, 0),
+(115, 1, 123, 0, '2023-02-10 19:39:50', '2023-02-10 19:41:40', 0, 123, 0),
+(116, 1, 12312, 0, '2023-02-10 19:42:13', '2023-02-10 19:43:52', 0, 12312, 0),
+(117, 1, 1231, 0, '2023-02-10 19:44:04', '2023-02-10 19:44:25', 0, 1231, 0),
+(118, 1, 123123, 0, '2023-02-10 19:47:04', '2023-02-10 19:47:36', 0, 123123, 0),
+(119, 1, 1231, 0, '2023-02-10 19:54:53', '2023-02-10 19:57:49', 0, 1231, 0),
+(120, 1, 1231, 0, '2023-02-10 20:08:25', '2023-02-10 20:13:10', 0, 1231, 0),
+(121, 1, 12312, 0, '2023-02-10 20:13:19', '2023-02-10 20:15:40', 0, 12312, 0),
+(122, 1, 12312, 0, '2023-02-10 20:17:38', '2023-02-10 20:18:11', 0, 12312, 0),
+(123, 1, 213123, 0, '2023-02-11 13:08:03', '2023-02-11 13:08:09', 0, 213123, 0),
+(124, 1, 123, 1440000, '2023-02-13 12:00:26', '2023-02-14 22:30:03', 2, 1440123, 0),
+(125, 1, 1000, 0, '2023-02-14 22:31:47', '2023-02-14 22:33:56', 0, 1000, 0),
+(126, 1, 1000, 0, '2023-02-14 22:34:50', '2023-02-14 22:35:09', 0, 1000, 0),
+(127, 1, 1000, 0, '2023-02-14 22:36:53', '2023-02-14 22:54:30', 0, 1000, 0),
+(128, 1, 123, 0, '2023-02-14 23:37:54', '2023-02-14 23:40:27', 0, 123, 0),
+(129, 1, 10000, 0, '2023-02-15 00:15:32', '2023-02-15 00:15:44', 0, 10000, 0),
+(130, 1, 10000, 0, '2023-02-15 00:36:27', '2023-02-15 00:48:45', 0, 10000, 0),
+(131, 1, 123, 0, '2023-02-15 00:49:14', '2023-02-15 00:49:29', 0, 123, 0),
+(132, 1, 10000, 0, '2023-02-16 00:36:06', '0000-00-00 00:00:00', 0, 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL,
+  `cedula` varchar(20) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `telefono` varchar(30) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `direccion` text NOT NULL,
+  `estado` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `cedula`, `nombre`, `telefono`, `correo`, `direccion`, `estado`) VALUES
+(1, '5734335', 'Cesar Alegre', '0971983884', '', 'Ruta IV - San Ignacio', 1),
+(2, '1878336', 'Maria Magdalena Báez Rios', '0975737941', '', 'Barrio San Pedro - San Ignacio', 1),
+(3, '12312', 'Lalo', '1231213123', '', 'LJSNjan', 1),
+(4, '21312', 'Rodolfo', '02131231', '', 'MNXA', 1),
+(5, '57343351', 'adasd', '0982131231', '', 'asass', 1),
+(6, '573433512', 'Prueba dos', '0971983884', '', 'asdasd', 1),
+(7, '12341412', 'José José', '0982510720', '', 'San Ignacio', 1),
+(8, '6544649', 'Aylen Alegre Báez', '0975633585', '', 'Ruta IV - San Ignacio.', 1),
+(9, '95312312', 'Locomotor', '0912311232', '', 'aslknasldna.', 1),
+(10, '31245124', 'dsasfaf', '13412412412', '', 'daasdasd', 1),
+(11, '825391', 'Josfina', '0987153912', '', 'asdasdwqD', 1),
+(12, '24124123', 'Eduardo', '0987123854', 'adsasda@gmail.com', 'San Ignacio', 1),
+(13, '123124', 'HOLa', '0987123853', '', 'dasdasd', 1),
+(14, '672312', 'Pruebasss', '0982742012', '', 'JasAAS', 1),
+(15, '293134', 'Ilum', '0987401620', '', 'San Juan', 1),
+(16, '724301', 'Machi Michi', '0931720371', '', 'San Lorenzo', 1),
+(17, '872412', 'Loma', '0987653421', '', 'San Ignacio', 1),
+(18, '412141', 'Final', '0987654321', '', 'San Ignacio', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compras`
+--
+
+CREATE TABLE `compras` (
+  `id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `estado` int(11) NOT NULL DEFAULT 1,
+  `id_proveedor` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `compras`
+--
+
+INSERT INTO `compras` (`id`, `total`, `fecha`, `estado`, `id_proveedor`, `id_usuario`) VALUES
+(1, 3100000, '2023-01-31 20:22:26', 0, 0, 0),
+(2, 1000020, '2023-01-31 20:31:02', 0, 0, 0),
+(3, 2000020, '2023-01-31 20:34:05', 0, 0, 0),
+(4, 3100000, '2023-02-13 17:23:39', 0, 0, 0),
+(5, 1550000, '2023-02-13 17:24:24', 0, 0, 0),
+(6, 10000000, '2023-02-09 15:39:24', 1, 0, 0),
+(7, 210, '2023-02-09 15:39:51', 1, 0, 0),
+(8, 600000, '2023-02-13 14:52:09', 1, 0, 0),
+(9, 900000, '2023-02-13 15:34:54', 1, 0, 0),
+(10, 900000, '2023-02-13 15:41:28', 1, 0, 0),
+(11, 1200000, '2023-02-13 16:09:58', 1, 0, 0),
+(12, 1200000, '2023-02-13 16:10:38', 1, 0, 0),
+(13, 560000, '2023-02-13 17:19:19', 1, 0, 0),
+(14, 1460000, '2023-02-14 19:48:27', 1, 0, 0),
+(15, 620000, '2023-02-15 21:11:57', 1, 1, 1),
+(16, 560000, '2023-02-15 21:18:22', 1, 1, 1),
+(17, 4200000, '2023-02-16 03:36:30', 1, 1, 1),
+(18, 930000, '2023-02-16 04:31:13', 1, 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalles`
+--
+
+CREATE TABLE `detalles` (
+  `id` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `precio` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `sub_total` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_compras`
+--
+
+CREATE TABLE `detalle_compras` (
+  `id` int(11) NOT NULL,
+  `id_compra` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `precio` int(11) NOT NULL,
+  `sub_total` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `detalle_compras`
+--
+
+INSERT INTO `detalle_compras` (`id`, `id_compra`, `id_producto`, `cantidad`, `precio`, `sub_total`) VALUES
+(1, 1, 2, 10, 310000, 3100000),
+(2, 2, 3, 10, 100000, 1000000),
+(3, 2, 4, 10, 2, 20),
+(4, 3, 3, 20, 100000, 2000000),
+(5, 3, 4, 10, 2, 20),
+(6, 4, 2, 10, 310000, 3100000),
+(7, 5, 2, 5, 310000, 1550000),
+(8, 6, 8, 10, 1000000, 10000000),
+(9, 7, 4, 105, 2, 210),
+(10, 8, 1, 2, 300000, 600000),
+(11, 9, 1, 3, 300000, 900000),
+(12, 10, 1, 3, 300000, 900000),
+(13, 11, 1, 4, 300000, 1200000),
+(14, 12, 1, 4, 300000, 1200000),
+(15, 13, 2, 2, 280000, 560000),
+(16, 14, 2, 2, 280000, 560000),
+(17, 14, 1, 2, 300000, 600000),
+(18, 14, 6, 3, 100000, 300000),
+(19, 15, 1, 2, 310000, 620000),
+(20, 16, 2, 2, 280000, 560000),
+(21, 17, 2, 15, 280000, 4200000),
+(22, 18, 1, 3, 310000, 930000);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_permisos`
+--
+
+CREATE TABLE `detalle_permisos` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_permiso` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `detalle_permisos`
+--
+
+INSERT INTO `detalle_permisos` (`id`, `id_usuario`, `id_permiso`) VALUES
+(340, 57, 5),
+(341, 57, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_temp`
+--
+
+CREATE TABLE `detalle_temp` (
+  `id` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `precio` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `descuento` int(11) NOT NULL DEFAULT 0,
+  `sub_total` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_ventas`
+--
+
+CREATE TABLE `detalle_ventas` (
+  `id` int(11) NOT NULL,
+  `id_venta` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `descuento` int(11) NOT NULL DEFAULT 0,
+  `precio` int(11) NOT NULL,
+  `sub_total` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `detalle_ventas`
+--
+
+INSERT INTO `detalle_ventas` (`id`, `id_venta`, `id_producto`, `cantidad`, `descuento`, `precio`, `sub_total`) VALUES
+(1, 9, 2, 5, 0, 390000, 1950000),
+(2, 10, 2, 70, 27000000, 390000, 300000),
+(3, 11, 2, 5, 0, 390000, 1950000),
+(4, 12, 3, 2, 0, 120000, 240000),
+(5, 13, 3, 1, 0, 120000, 120000),
+(6, 14, 6, 5, 0, 30000, 150000),
+(7, 15, 6, 10, 0, 30000, 300000),
+(8, 16, 6, 1, 0, 30000, 30000),
+(9, 17, 6, 1, 0, 30000, 30000),
+(10, 18, 6, 1, 0, 30000, 30000),
+(11, 18, 1, 3, 0, 150000, 450000),
+(12, 19, 8, 2, 0, 1500000, 3000000),
+(13, 20, 1, 2, 0, 360000, 720000),
+(14, 21, 1, 2, 0, 360000, 720000),
+(15, 22, 1, 2, 0, 360000, 720000),
+(16, 23, 1, 5, 10000, 390000, 1940000),
+(17, 23, 2, 4, 25000, 300000, 1175000);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empresa`
+--
+
+CREATE TABLE `empresa` (
+  `id` int(11) NOT NULL,
+  `ruc` varchar(20) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `telefono` varchar(16) NOT NULL,
+  `direccion` varchar(200) NOT NULL,
+  `mensaje` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`id`, `ruc`, `nombre`, `telefono`, `direccion`, `mensaje`) VALUES
+(1, '951384-1', 'Centro de Neumáticos César', '0982403638', 'Ruta 4ta. a 30 Mts. del Cruce Avay - San Ignacio - Mnes - Py ', 'Gracias por su compra!!');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `permisos`
+--
+
+CREATE TABLE `permisos` (
+  `id` int(11) NOT NULL,
+  `permiso` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `permisos`
+--
+
+INSERT INTO `permisos` (`id`, `permiso`) VALUES
+(1, 'usuarios'),
+(2, 'configuracion'),
+(3, 'cajas'),
+(4, 'arqueo_caja'),
+(5, 'clientes'),
+(6, 'categorias'),
+(7, 'productos'),
+(8, 'nueva_compra'),
+(9, 'historial_compras'),
+(10, 'nueva_venta'),
+(11, 'historial_ventas'),
+(12, 'eliminar_clientes'),
+(13, 'registrar_clientes'),
+(14, 'proveedores');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(20) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
+  `precio_compra` int(11) NOT NULL,
+  `precio_venta` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL DEFAULT 0,
+  `id_categoria` int(11) NOT NULL,
+  `foto` varchar(50) NOT NULL,
+  `estado` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id`, `codigo`, `descripcion`, `precio_compra`, `precio_venta`, `cantidad`, `id_categoria`, `foto`, `estado`) VALUES
+(1, '1', '195/65/15', 310000, 390000, 14, 1, '20230216025241.jpg', 1),
+(2, '2', '175/70/13', 280000, 300000, 2, 1, 'default.png', 1),
+(3, '123445', 'Prueba', 100, 200, 0, 1, 'default.png', 1),
+(4, '3', 'Prueba', 1, 2, 0, 1, 'default.png', 1),
+(5, '4', 'Por Fin', 1, 2, 0, 1, 'default.png', 1),
+(6, '5', '14 de 4 agujeros', 100000, 150000, 3, 2, 'default.png', 1),
+(7, '6', '175/70/14', 300000, 380000, 0, 1, 'default.png', 1),
+(8, '123456', 'Prueba Compra', 1, 2, 0, 3, 'default.png', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedores`
+--
+
+CREATE TABLE `proveedores` (
+  `id` int(11) NOT NULL,
+  `ruc` varchar(20) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `telefono` varchar(30) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `direccion` text NOT NULL,
+  `estado` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`id`, `ruc`, `nombre`, `telefono`, `correo`, `direccion`, `estado`) VALUES
+(1, '5734335-1', 'Cesar Alegre', '0971983884', '', 'San Ignacio - Ruta IV', 1),
+(2, '12331231', 'Prueva', '0987654321', '', 'San Ignacio', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(20) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `clave` varchar(100) NOT NULL,
+  `id_caja` int(11) NOT NULL,
+  `estado` int(11) NOT NULL DEFAULT 1,
+  `telefono` varchar(30) NOT NULL,
+  `correo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `usuario`, `nombre`, `clave`, `id_caja`, `estado`, `telefono`, `correo`) VALUES
+(1, 'admin', 'Administrador', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 1, 1, '0971983884', 'cesaralegre670@gmail.com'),
+(57, 'prueba', 'pruebas', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 2, 1, '0987654321', 'asdasd@gmail.com'),
+(58, 'Intu', 'Antonela', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 2, 1, '0987251821', 'intulalocua@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ventas`
+--
+
+CREATE TABLE `ventas` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `estado` int(11) NOT NULL DEFAULT 1,
+  `apertura` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id`, `id_usuario`, `id_cliente`, `total`, `fecha`, `estado`, `apertura`) VALUES
+(20, 1, 1, '720000.00', '2023-02-15 01:30:03', 0, 0),
+(21, 1, 2, '720000.00', '2023-02-15 01:30:03', 1, 0),
+(22, 1, 1, '720000.00', '2023-02-15 01:30:03', 1, 0),
+(23, 1, 1, '3115000.00', '2023-02-16 03:37:21', 1, 1);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `auditoria`
+--
+ALTER TABLE `auditoria`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `cajas`
+--
+ALTER TABLE `cajas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `cierre_caja`
+--
+ALTER TABLE `cierre_caja`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `CAJA_USUARIO` (`id_usuario`);
+
+--
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `compras`
+--
+ALTER TABLE `compras`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `detalles`
+--
+ALTER TABLE `detalles`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `DETALLES_PRODUCTO` (`id_producto`),
+  ADD KEY `DETALLES_USUARIO` (`id_usuario`);
+
+--
+-- Indices de la tabla `detalle_compras`
+--
+ALTER TABLE `detalle_compras`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `DETALLECOMPRA_PRODUCTO` (`id_producto`),
+  ADD KEY `DETALLECOMPRA_COMPRA` (`id_compra`);
+
+--
+-- Indices de la tabla `detalle_permisos`
+--
+ALTER TABLE `detalle_permisos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_permiso` (`id_permiso`),
+  ADD KEY `id_usuario` (`id_usuario`);
+
+--
+-- Indices de la tabla `detalle_temp`
+--
+ALTER TABLE `detalle_temp`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `VENTA_PRODUCTO` (`id_producto`),
+  ADD KEY `VENTA_USUARIO` (`id_usuario`);
+
+--
+-- Indices de la tabla `detalle_ventas`
+--
+ALTER TABLE `detalle_ventas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `DETALLEVENTA_VENTAS` (`id_venta`),
+  ADD KEY `DETALLEVENTA_PRODUCTOS` (`id_producto`);
+
+--
+-- Indices de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `permisos`
+--
+ALTER TABLE `permisos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `CATEGORIA_PRODUCTO` (`id_categoria`);
+
+--
+-- Indices de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_caja` (`id_caja`);
+
+--
+-- Indices de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_cliente` (`id_cliente`),
+  ADD KEY `id_usuario` (`id_usuario`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `auditoria`
+--
+ALTER TABLE `auditoria`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+
+--
+-- AUTO_INCREMENT de la tabla `cajas`
+--
+ALTER TABLE `cajas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT de la tabla `cierre_caja`
+--
+ALTER TABLE `cierre_caja`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+
+--
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de la tabla `compras`
+--
+ALTER TABLE `compras`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de la tabla `detalles`
+--
+ALTER TABLE `detalles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT de la tabla `detalle_compras`
+--
+ALTER TABLE `detalle_compras`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de la tabla `detalle_permisos`
+--
+ALTER TABLE `detalle_permisos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=342;
+
+--
+-- AUTO_INCREMENT de la tabla `detalle_temp`
+--
+ALTER TABLE `detalle_temp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+
+--
+-- AUTO_INCREMENT de la tabla `detalle_ventas`
+--
+ALTER TABLE `detalle_ventas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `permisos`
+--
+ALTER TABLE `permisos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `cierre_caja`
+--
+ALTER TABLE `cierre_caja`
+  ADD CONSTRAINT `CAJA_USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `detalles`
+--
+ALTER TABLE `detalles`
+  ADD CONSTRAINT `DETALLES_PRODUCTO` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`),
+  ADD CONSTRAINT `DETALLES_USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `detalle_compras`
+--
+ALTER TABLE `detalle_compras`
+  ADD CONSTRAINT `DETALLECOMPRA_COMPRA` FOREIGN KEY (`id_compra`) REFERENCES `compras` (`id`),
+  ADD CONSTRAINT `DETALLECOMPRA_PRODUCTO` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`);
+
+--
+-- Filtros para la tabla `detalle_permisos`
+--
+ALTER TABLE `detalle_permisos`
+  ADD CONSTRAINT `detalle_permisos_ibfk_1` FOREIGN KEY (`id_permiso`) REFERENCES `permisos` (`id`),
+  ADD CONSTRAINT `detalle_permisos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `detalle_temp`
+--
+ALTER TABLE `detalle_temp`
+  ADD CONSTRAINT `VENTA_PRODUCTO` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`),
+  ADD CONSTRAINT `VENTA_USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `detalle_ventas`
+--
+ALTER TABLE `detalle_ventas`
+  ADD CONSTRAINT `DETALLEVENTA_PRODUCTOS` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`),
+  ADD CONSTRAINT `DETALLEVENTA_VENTAS` FOREIGN KEY (`id_venta`) REFERENCES `ventas` (`id`);
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `CATEGORIA_PRODUCTO` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`);
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_caja`) REFERENCES `cajas` (`id`);
+
+--
+-- Filtros para la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`),
+  ADD CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+COMMIT;
